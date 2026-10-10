@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weatherly</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <h1>Weatherly</h1>
+      <p class="subtitle">Live weather at a glance</p>
+    </header>
+
+    <section class="card form-card">
+      <form id="weather-form">
+        <div class="field-group">
+          <label for="api-key">OpenWeatherMap API Key</label>
+          <input
+            type="text"
+            id="api-key"
+            placeholder="e.g. 1234567890abcdef1234567890abcdef"
+            autocomplete="off"
+            required
+          />
+        </div>
+        <div class="field-group">
+          <label for="city">City</label>
+          <input
+            type="text"
+            id="city"
+            placeholder="e.g. London"
+            autocomplete="off"
+            required
+          />
+        </div>
+        <div class="field-group">
+          <label for="country">Country</label>
+          <input
+            type="text"
+            id="country"
+            placeholder="e.g. GB"
+            maxlength="2"
+            autocomplete="off"
+            required
+          />
+        </div>
+        <button type="submit" id="get-weather-btn" class="primary-btn">
+          Get Weather
+        </button>
+      </form>
+    </section>
+
+    <section class="card result-card" id="result-card" aria-hidden="true">
+      <div id="result-content"></div>
+    </section>
+
+    <section class="error-section" aria-live="polite">
+      <p id="error-message"></p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Powered by <a href="https://openweathermap.org/" target="_blank" rel="noopener">OpenWeatherMap</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
